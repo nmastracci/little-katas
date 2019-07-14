@@ -1,0 +1,29 @@
+{
+  "name": "little-katas",
+  "version": "1.0.0",
+  "description": "Practice testing and refactoring code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node server.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmastracci/little-katas.git"
+  },
+  "author": "Natalie Mastracci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmastracci/little-katas/issues"
+  },
+  "homepage": "https://github.com/nmastracci/little-katas#readme",
+  "devDependencies": {
+    "@types/node": "^12.6.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
