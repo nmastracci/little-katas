@@ -4,8 +4,8 @@
   "description": "Practice testing and refactoring code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
+    "test": "mocha -r ts-node/register src/tests/**/*.spec.ts",
     "start": "node server.js",
     "prestart": "npm run build"
   },
@@ -20,10 +20,16 @@
   },
   "homepage": "https://github.com/nmastracci/little-katas#readme",
   "devDependencies": {
-    "@types/node": "^12.6.2",
-    "typescript": "^3.5.3"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "mocha": "^6.1.4"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.6.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
   }
 }
