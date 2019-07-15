@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { AvailableGroceries, checkout } from './../supermarket';
+import { AvailableGroceries, checkout } from '../checkout';
 
 // Prices and Sales
 // bakedBeans: 0.20 per can and 3 for 2,
@@ -15,17 +15,15 @@ describe('Super Market', () => {
     expect(result).to.equal(0.2);
   });
 
-  xit('should price one bag of bananas correctly', () => {
+  it('should price one bag of bananas correctly', () => {
     const result = checkout([
       { lineItem: AvailableGroceries.bananas, amount: 1 },
     ]);
     expect(result).to.equal(1.2);
   });
 
-  xit('should price one bottle of beer correctly', () => {
-    const result = checkout([
-      { lineItem: AvailableGroceries.bananas, amount: 1 },
-    ]);
+  it('should price one bottle of beer correctly', () => {
+    const result = checkout([{ lineItem: AvailableGroceries.beer, amount: 1 }]);
     expect(result).to.equal(1.5);
   });
 });

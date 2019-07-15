@@ -1,7 +1,9 @@
+import { inventory } from './inventory';
+
 export enum AvailableGroceries {
-  bakedBeans,
-  bananas,
-  beer,
+  bakedBeans = 'bakedBeans',
+  bananas = 'bananas',
+  beer = 'beer',
 }
 
 export interface IGrocery {
@@ -11,10 +13,11 @@ export interface IGrocery {
 
 export function checkout(groceries: IGrocery[]): number {
   return groceries.reduce((accum: number, curr: IGrocery): number => {
-    if (curr.lineItem === AvailableGroceries.bakedBeans) {
-      accum = +curr.amount * 0.2;
-      return accum;
-    }
+    let lineItem = inventory.filter(item => {
+      return item.name === curr.lineItem;
+    });
+
+    accum = +curr.amount * lineItem[0].price;
     return accum;
   }, 0);
 }
