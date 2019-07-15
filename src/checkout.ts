@@ -12,10 +12,16 @@ export interface IGrocery {
 }
 
 export function checkout(groceries: IGrocery[]): number {
-  return groceries.reduce((accum: number, curr: IGrocery): number => {
+  return groceries.reduce((accum: number, curr: IGrocery) => {
     let lineItem = inventory.filter(item => {
       return item.name === curr.lineItem;
     });
+
+    if (curr.amount % 3 === 0) {
+      if (curr.lineItem === AvailableGroceries.beer) {
+        return accum + (curr.amount / 3) * 4;
+      }
+    }
 
     return accum + curr.amount * lineItem[0].price;
   }, 0);
