@@ -46,10 +46,17 @@ describe('Super Market', () => {
     expect(result).to.equal(8);
   });
 
-  xit('should apply the baked beans deal', () => {
+  it('should apply the baked beans deal', () => {
     const result = checkout([
       { lineItem: AvailableGroceries.bakedBeans, amount: 3 },
     ]);
     expect(result).to.equal(0.4);
+  });
+
+  it('should apply the baked beans deal twice', () => {
+    const result = checkout([
+      { lineItem: AvailableGroceries.bakedBeans, amount: 6 },
+    ]);
+    expect(result).to.equal(0.8);
   });
 });

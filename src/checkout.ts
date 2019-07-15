@@ -21,6 +21,10 @@ export function checkout(groceries: IGrocery[]): number {
       if (curr.lineItem === AvailableGroceries.beer) {
         return accum + (curr.amount / 3) * 4;
       }
+
+      if (curr.lineItem === AvailableGroceries.bakedBeans) {
+        return accum + (curr.amount - curr.amount / 3) * lineItem[0].price;
+      }
     }
 
     return accum + curr.amount * lineItem[0].price;
