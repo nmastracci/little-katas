@@ -17,8 +17,7 @@ export function checkout(groceries: IGrocery[]): number {
       return item.name === curr.lineItem;
     });
 
-    accum = +curr.amount * lineItem[0].price;
-    return accum;
+    return accum + curr.amount * lineItem[0].price;
   }, 0);
 }
 

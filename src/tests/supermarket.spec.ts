@@ -26,4 +26,13 @@ describe('Super Market', () => {
     const result = checkout([{ lineItem: AvailableGroceries.beer, amount: 1 }]);
     expect(result).to.equal(1.5);
   });
+
+  it('should provide the correct total for multiple items', () => {
+    const result = checkout([
+      { lineItem: AvailableGroceries.bakedBeans, amount: 1 },
+      { lineItem: AvailableGroceries.bananas, amount: 1 },
+      { lineItem: AvailableGroceries.beer, amount: 1 },
+    ]);
+    expect(result).to.equal(2.9);
+  });
 });
