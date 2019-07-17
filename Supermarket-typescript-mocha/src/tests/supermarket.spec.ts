@@ -2,11 +2,6 @@ import { expect } from 'chai';
 import { describe, it } from 'mocha';
 import { AvailableGroceries, checkout } from '../checkout';
 
-// Prices and Sales
-// bakedBeans: 0.20 per can and 3 for 2,
-// bananas 1.20 per bag
-// beer 1.50/bottle and 3 for $4
-
 describe('Super Market', () => {
   it('should price one can of baked beans correctly', () => {
     const result = checkout([
