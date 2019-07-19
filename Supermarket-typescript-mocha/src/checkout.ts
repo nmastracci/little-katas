@@ -11,7 +11,7 @@ export interface IGrocery {
   amount: number;
 }
 
-export function checkout(groceries: IGrocery[]): number {
+export default function checkout(groceries: IGrocery[]): number {
   return groceries.reduce((accum: number, curr: IGrocery) => {
     let lineItem = inventory.filter(item => {
       return item.name === curr.lineItem;
@@ -30,5 +30,3 @@ export function checkout(groceries: IGrocery[]): number {
     return accum + curr.amount * lineItem[0].price;
   }, 0);
 }
-
-export default checkout;

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { AvailableGroceries, checkout } from '../checkout';
+import checkout, { AvailableGroceries } from '../checkout';
 
 describe('Super Market', () => {
   it('should price one can of baked beans correctly', () => {
