@@ -7,5 +7,11 @@ export default class Digit {
     this.digit = digit;
   }
 
-  makeOrdinal() {}
+  makeOrdinal() {
+    if (this.digit % 10 === 1 && this.digit !== 11) {
+      return this.digit + 'st';
+    }
+
+    return this.digit + 'th';
+  }
 }
