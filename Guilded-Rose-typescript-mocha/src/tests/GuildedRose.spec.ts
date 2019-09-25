@@ -36,6 +36,15 @@ describe('Guilded Rose Items', () => {
     expect(result[0].quality).to.equal(50);
   })
 
+  it('should increment quality by 2 after sellin is 0 for Aged Brie', () => {
+    const shop = new Shop([{name: 'Aged Brie', sellIn: 0, quality:20}])
+
+    const result =  shop.updateQuality();
+    expect(result[0].name).to.equal('Aged Brie');
+    expect(result[0].sellIn).to.equal(-1);
+    expect(result[0].quality).to.equal(22);
+  })
+
   it('Aged Brie increases in quality over time', () => {
     const shop = new Shop([{name: 'Aged Brie', sellIn:5, quality:20}])
 
@@ -90,6 +99,20 @@ describe('Guilded Rose Items', () => {
     expect(result[0].sellIn).to.equal(-1);
     expect(result[0].quality).to.equal(0);
 
+  });
+
+  it('should update quality for multiple items in the shop', () => {
+    const shop = new Shop([{name: 'Sulfuras, Hand of Ragnaros', sellIn: 5, quality:20},{name:'Normal', sellIn:5, quality: 6}]);
+
+    const result = shop.updateQuality();
+
+    expect(result[0].name).to.equal('Sulfuras, Hand of Ragnaros');
+    expect(result[0].sellIn).to.equal(5);
+    expect(result[0].quality).to.equal(20);
+
+    expect(result[1].name).to.equal('Normal');
+    expect(result[1].sellIn).to.equal(4);
+    expect(result[1].quality).to.equal(5);
   });
 });
 

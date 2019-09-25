@@ -33,3 +33,7 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
   - Quality drops to 0 after the concert
 - Conjured items degrade in quality twice as fast as normal items
 - Don't touch the Item class or Items property!
+
+
+09/25/2019
+- next time go over readme and set a team intention for the group to refactor around
