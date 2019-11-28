@@ -23,7 +23,7 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 # Item Summary
 
 - Every item's SellIn and Quality value degrade by one each day
-- Every item's Quality value degrades twice as fast pas the sell by date
+- Every item's Quality value degrades twice as fast past the sell by date
 - No Quality value can be greater than 50
 - Aged Brie increases in Quality over time
 - Sulfuras has no SellIn date and never decreases in Quality
