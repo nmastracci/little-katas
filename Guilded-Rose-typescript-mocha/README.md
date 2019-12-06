@@ -26,7 +26,7 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 - Every item's Quality value degrades twice as fast pas the sell by date
 - No Quality value can be greater than 50
 - Aged Brie increases in Quality over time
-- Sulfuras has no SellIn date and never decreases in Quality
+- Sulfuras, Hand of Ragnaros has no SellIn date and never decreases in Quality
 - Backstage Passes increase in Quality as SellIn value approaches
   - 10 days or less Quality increases by 2
   - 5 days or less Quality increases by 3
