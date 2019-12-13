@@ -1,25 +1,16 @@
 import { expect } from 'chai';
-import { totally } from '../Bowling';
 import { describe } from 'mocha';
 import Game from '../Bowling';
 
-describe('Connected Tests', () => {
-  it('Totally Works', () => {
-    const result = totally();
-    expect(result).to.equal('works!');
-  });
-});
-
-
 describe('Norming Bowling Games', () => {
   it('should score a single throw', () => {
-    const rolls = [7,0,0,0,0,0,0,0,0,0]
+    const rolls:number[] = [7,0,0,0,0,0,0,0,0,0]
     const result = Game.score(rolls);
 
     expect(result).to.equal(7);
   })
 
-  it('should score two throws which do not add up to  strike or a spare', () => {
+  it.skip('should score two throws which do not add up to  strike or a spare', () => {
     const rolls = [4,1,0,0,0,0,0,0,0,0];
     const result = Game.score(rolls);
 
@@ -96,7 +87,7 @@ describe('Special Game Combinations', () => {
 
   it('should score a dutch 200', () => {
     // TODO: what is a dutch 200?
-    const rolls = [];
+    const rolls:number[] = [];
     const result = Game.score(rolls);
 
     expect(result).to.equal('TODO')
